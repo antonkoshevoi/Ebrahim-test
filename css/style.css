@@ -77,6 +77,7 @@ input[type=text]:focus-visible{
 
 .history-block p{
   font-weight: 600;
+  flex: 0 1 300px;
 }
 
 .right-side{
@@ -136,7 +137,7 @@ input[type=text]:focus-visible{
   h3{
     font-size: 16px;
   }
-  p{
+  .history-block p{
     font-size: 14px;
     flex: 0 1 200px;
   }
