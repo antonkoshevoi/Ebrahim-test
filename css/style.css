@@ -120,7 +120,7 @@ input[type=text]:focus-visible{
   position: absolute;
   bottom: 0;
   right: 0;
-  background: url('./image/close-button.png') no-repeat;
+  background: url('../image/close-button.png') no-repeat;
   background-size: 20px;
   height: 24px;
   width: 24px;
