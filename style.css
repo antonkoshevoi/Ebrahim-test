@@ -6,10 +6,12 @@ body {
   font: 16px Arial;  
 }
 
+/* -------- Block autocomplete -------- */
+
 .autocomplete {
   position: relative;
-  display: inline-block;
-  width: 400px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 input {
@@ -22,6 +24,10 @@ input {
 input[type=text] {
   background-color: #f1f1f1;
   width: 100%;
+  display: block;
+}
+input[type=text]:focus-visible{
+  outline: none;
 }
 
 .autocomplete-items {
@@ -51,26 +57,22 @@ input[type=text] {
   color: #ffffff; 
 }
 
-#search-history {
-  background: lightgray;
+/* ------ Block history -------- */
+
+.search-history {
+  background: #f1f1f1;
   padding: 15px;
-  width: 400px;
+  max-width: 600px;
+  margin: 5px auto 0 auto;
+  overflow: hidden;
 }
 
-#history-header,
+.history-header,
 .history-block{
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-#clear-history{
-  border: none;
-  background: none;
-}
-
-#history-list{
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid lightgray;
 }
 
 .history-block p{
@@ -82,12 +84,67 @@ input[type=text] {
   display: flex;
   align-items: center;
   color: gray;
+  margin: 0 0 0 30px;
+}
+.right-side span{
+  max-width: 140px;
+  text-align: center;
+}
+
+/* ------ Buttons -------- */
+
+.clear-history{
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: relative;
+  text-decoration: underline;
+}
+
+.clear-history:hover{
+  opacity: 0.5;
 }
 
 .history-list-button-remove{
   border: none;
   background: none;
   font-size: 20px;
-  color: gray;
   margin: 0 0 0 15px;
+  cursor: pointer;
+  position: relative;
+  color: transparent;
+}
+
+.history-list-button-remove::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: url('./image/close-button.png') no-repeat;
+  background-size: 20px;
+  height: 24px;
+  width: 24px;
+}
+
+.history-list-button-remove:hover{
+  opacity: 0.5;
+}
+
+/* ------ Xs Breakpoint -------- */
+
+@media (max-width: 575px) {
+  h3{
+    font-size: 16px;
+  }
+  p{
+    font-size: 14px;
+    flex: 0 1 200px;
+  }
+  .history-list-button-remove{
+    margin: 0 0 0 10px;
+  }
+  .right-side{
+    font-size: 12px;
+    margin: 0 0 0 15px;
+  }
 }
